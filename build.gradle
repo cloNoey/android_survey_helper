@@ -1,0 +1,20 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.compose) apply false
+}
+
+// 프로젝트 루트 build.gradle (project level)
+def envFile = rootProject.file(".env")
+def Properties envProperties = new Properties()
+
+if (envFile.exists()) {
+    envFile.withInputStream { stream ->
+        envProperties.load(stream)
+    }
+    // envProperties를 하위 프로젝트에서도 접근 가능하게 설정
+    allprojects {
+        ext.env = envProperties
+    }
+}

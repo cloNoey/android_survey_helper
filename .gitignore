@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local configuration
+/local.properties
+.env
+
+# Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# MacOS
+.DS_Store
+
+/captures
+.externalNativeBuild
+.cxx
+
+# APKs / AABs
+*.apk
+*.ap_
+/app/release
+
+# OS generated
+Thumbs.db
+Desktop.ini
+
+.kotlin/
